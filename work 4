@@ -1,39 +1,39 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>360° Image Browser</title>
-    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-layout-component@4.x.x/dist/aframe-layout-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-event-set-component@5.x.x/dist/aframe-event-set-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.jss"></script>
-  </head>
-  <body>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.2/dist/aframe-extras.min.js"></script>
+</head>
+
+<body>
     <a-scene>
-      <a-assets>
-        <audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+        <a-text value="653380043-4" position="0 1 -10" color="#00ff94" width="20" align="center">
+        </a-text>
+        <a-text value="Savitta Sangwannakul" position="0 -1 -10" color="#e5d137" width="18" align="center">
+        </a-text>
+        <a-text value="I am a third-year student at Khon Kaen University." position="0 -3 -10" color="#04efef" width="18"
+            align="center">
+        </a-text>
 
-        <!-- New Images -->
-        <img id="new-background" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg"> <!-- เปลี่ยนภาพที่นี่ -->
-      </a-assets>
+        <a-sky color="#FFFFF" src="w4_picture.jpg"></a-sky>
 
-      <!-- New 360-degree image -->
-      <a-sky id="image-360" radius="10" src="#new-background"></a-sky>
+        <a-entity gltf-model="w4.glb" position="0 20 -40" scale="0.3 0.3 0.3"
+            animation__rotate="property: rotation; to: -360 0 0; loop: true; easing: linear; dur: 5000"
+            sound = "src: frog-laughing-meme.mp3; autoplay:true; volume:3;">
+        </a-entity>
 
-      <!-- เพิ่มข้อความ -->
-      <a-text value="653380043-4 Savitta Sangwannakul sec2 " position="0 2 -4" color="white" align="center" width="6"></a-text>
+        <a-entity gltf-model="w4_2.glb" position="-40 -10 -40" scale="5 5 5"
+            animation__rotate="property: rotation; to: 360 -360 0; loop: true; easing: linear; dur: 1000">
+        </a-entity>
 
-      <!-- Link template we will build. -->
-      <a-entity class="link"></a-entity>
-
-      <!-- Camera + Cursor -->
-      <a-camera>
-        <a-cursor
-          id="cursor"
-          animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
-          animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click"
-          animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing"></a-cursor>
-      </a-camera>
+        <a-entity gltf-model="w4_3.glb" position="15 -4 -15" scale="5 5 5"
+            animation__rotate="property: rotation; to: 360 0 0; loop: true; easing: linear; dur: 2000">
+        </a-entity>
+        <a-entity gltf-model="Cloud.glb" position="0 5 -19" scale="2 2 3"></a-entity>
     </a-scene>
-  </body>
+</body>
+
 </html>
-aframe.io
+
