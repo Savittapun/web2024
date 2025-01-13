@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>360° Image Browser</title>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@4.x.x/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.x.x/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.jss"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+
+        <!-- New Images -->
+        <img id="new-background" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg"> <!-- เปลี่ยนภาพที่นี่ -->
+      </a-assets>
+
+      <!-- New 360-degree image -->
+      <a-sky id="image-360" radius="10" src="#new-background"></a-sky>
+
+      <!-- เพิ่มข้อความ -->
+      <a-text value="653380043-4 Savitta Sangwannakul sec2 " position="0 2 -4" color="white" align="center" width="6"></a-text>
+
+      <!-- Link template we will build. -->
+      <a-entity class="link"></a-entity>
+
+      <!-- Camera + Cursor -->
+      <a-camera>
+        <a-cursor
+          id="cursor"
+          animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
+          animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click"
+          animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing"></a-cursor>
+      </a-camera>
+    </a-scene>
+  </body>
+</html>
+aframe.io
